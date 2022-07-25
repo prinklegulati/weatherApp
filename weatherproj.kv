@@ -1,0 +1,174 @@
+WeatherClass:
+<WeatherClass>:
+    #orientation: 'horizontal'
+    GridLayout:
+        cols: 2
+        rows: 2
+        size_hint:1,.4
+        pos_hint:{'right':1,'top':0.8}
+        Label:
+            text: "" if root.condition_descriptors is None else "%s"%(root.condition_descriptors)
+            halign: 'left'
+            valign: 'top'
+            Image:
+                source: '' if root.condition_icon is None else "%s"%(root.condition_icon)
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+        Label
+            text: '' if root.temperature_description is None else "%s"%(root.temperature_description)
+            y:self.parent.y
+            x:self.parent.x+self.parent.width/4
+            size: (self.parent.width,self.parent.height)
+            halign: 'left'
+            valign: 'top'
+        Button:
+            text: '' if root.maximum_temperature is None else "%d"%(root.maximum_temperature)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Maximum \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/max.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+        Button:
+            text: '' if root.minimum_temperature is None else "%d"%(root.minimum_temperature)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Minimum \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/min.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+    Label:
+        text: "Today Details"
+        size_hint:1,.05
+        pos_hint:{'right':1,'top':0.4}
+
+    GridLayout:
+        cols: 3
+        rows: 1
+        size_hint:1,.170
+        pos_hint:{'right':1,'top':0.35}
+        Button:
+            text: '' if root.humidity is None else "%d"%(root.humidity)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Humidity \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/humidity.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+        Button:
+            text: '' if root.feels_like is None else "%d"%(root.feels_like)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Feels Like \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/feelslike.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+        Button:
+            text: '' if root.visibility is None else "%d"%(root.visibility)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Visibility \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/visibility.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+    GridLayout:
+        cols:2
+        rows:1
+        size_hint:1,.165
+        pos_hint:{'right':1,'top':0.165}
+        Button:
+            text: '' if root.wind is None else "%d"%(root.wind)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Wind \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/wind.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
+        Button:
+            text: '' if root.pressure is None else "%d"%(root.pressure)
+            #disabled : True
+            Label:
+                color:(1,0,1)
+                text: 'Pressure \n'
+                text_size: self.size
+                y:self.parent.y
+                x:self.parent.x+self.parent.width/4
+                size: (self.parent.width,self.parent.height)
+                halign: 'left'
+                valign: 'top'
+            Image:
+                source: './images/pressure.png'
+                y:self.parent.y
+                x:self.parent.x
+                size: (self.parent.width/4,self.parent.height)
+                allow_stretch: True
+                keep_ratio: False
